@@ -1,0 +1,1639 @@
+<!DOCTYPE html>
+<html lang="hi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A To Z Insurance Point | Post- Utraula, Dist- Balrampur (U.P.)</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .glass-card { background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(10px); }
+    @media print {
+      body * { visibility: hidden; }
+      #printableCertArea, #printableCertArea * { visibility: visible; }
+      #printableCertArea { position: absolute; left: 0; top: 0; width: 100%; box-shadow: none !important; }
+      .no-print { display: none !important; }
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+  <!-- TOP LOCATION & HELPLINE BAR -->
+  <div class="bg-slate-900 text-slate-200 text-xs py-2 px-4 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center gap-4 flex-wrap">
+        <span><i class="fa-solid fa-location-dot text-emerald-400 mr-1.5"></i><strong>A To Z Insurance Point</strong> — Main Market, Post- Utraula, District- Balrampur (U.P.) 271604</span>
+        <span class="hidden md:inline text-slate-500">|</span>
+        <span class="hidden md:inline"><i class="fa-solid fa-clock text-amber-400 mr-1.5"></i>Mon - Sun: 9:00 AM - 8:00 PM</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span id="syncBadge" class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-emerald-950 text-emerald-300 border border-emerald-700/60">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Local + Google Sheet Ready
+        </span>
+        <a href="tel:+919876543210" class="hover:text-emerald-400 transition"><i class="fa-solid fa-phone mr-1"></i>+91 98765 43210</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN NAVIGATION BAR -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
+      <!-- Brand Logo -->
+      <button type="button" onclick="switchMainView('public')" class="flex items-center gap-3 text-left group">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-blue-700 to-emerald-600 flex items-center justify-center text-white font-extrabold text-lg shadow-md group-hover:scale-105 transition">
+          A2Z
+        </div>
+        <div>
+          <div class="text-lg font-extrabold tracking-tight text-slate-900 leading-none">A To Z Insurance Point</div>
+          <div class="text-xs font-medium text-emerald-700 mt-0.5">Post- Utraula, Dist- Balrampur (U.P.)</div>
+        </div>
+      </button>
+
+      <!-- Center Nav Links (Public View) -->
+      <nav id="publicNavLinks" class="hidden lg:flex items-center gap-6 text-sm font-semibold text-slate-600">
+        <a href="#servicesSection" onclick="switchMainView('public')" class="hover:text-blue-700 transition">बीमा सेवाएं (Services)</a>
+        <a href="#calculatorSection" onclick="switchMainView('public')" class="hover:text-blue-700 transition">प्रीमियम कैलकुलेटर</a>
+        <a href="#quoteSection" onclick="switchMainView('public')" class="hover:text-blue-700 transition">ऑनलाइन कोटेशन</a>
+        <a href="#contactSection" onclick="switchMainView('public')" class="hover:text-blue-700 transition">संपर्क करें (Utraula Office)</a>
+      </nav>
+
+      <!-- Portal Switch Buttons -->
+      <div class="flex items-center gap-2">
+        <button type="button" onclick="switchMainView('public')" id="btnNavPublic" class="px-3 py-2 rounded-lg text-xs sm:text-sm font-semibold text-slate-700 hover:bg-slate-100 transition">
+          <i class="fa-solid fa-house mr-1"></i>Home
+        </button>
+        <button type="button" onclick="openPortal('client')" id="btnNavClient" class="px-3.5 py-2 rounded-lg text-xs sm:text-sm font-semibold bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm transition">
+          <i class="fa-solid fa-user-shield mr-1.5"></i>Client Portal
+        </button>
+        <button type="button" onclick="openPortal('admin')" id="btnNavAdmin" class="px-3.5 py-2 rounded-lg text-xs sm:text-sm font-semibold bg-blue-700 hover:bg-blue-800 text-white shadow-sm transition">
+          <i class="fa-solid fa-lock mr-1.5"></i>Admin Portal
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toastContainer" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 max-w-sm w-full pointer-events-none px-4 sm:px-0"></div>
+
+  <!-- =====================================================================
+       VIEW 1: PUBLIC WEBSITE (LANDING PAGE)
+       ===================================================================== -->
+  <main id="viewPublic" class="flex-1">
+    <!-- HERO SECTION -->
+    <section class="relative bg-gradient-to-br from-slate-900 via-blue-950 to-emerald-950 text-white overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 py-12 lg:py-16 grid lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-emerald-300 text-xs font-semibold">
+            <i class="fa-solid fa-shield-heart"></i> बलरामपुर और उतरौला का सबसे विश्वसनीय बीमा केंद्र
+          </div>
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
+            आपकी गाड़ी, स्वास्थ्य और परिवार की सुरक्षा — <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-300">A To Z Insurance Point</span> के साथ
+          </h1>
+          <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
+            पोस्ट- उतरौला, जिला- बलरामपुर में सभी प्रमुख बीमा कंपनियों (LIC, Star Health, HDFC ERGO, ICICI Lombard, Bajaj Allianz, New India) की पॉलिसी, तुरंत रिन्यूअल और 100% क्लेम सहायता।
+          </p>
+          <div class="flex flex-wrap gap-3 pt-1">
+            <button type="button" onclick="openPortal('client')" class="px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold text-sm shadow-lg shadow-emerald-500/20 transition flex items-center gap-2">
+              <i class="fa-solid fa-id-card"></i> अपनी पॉलिसी देखें (Client Login)
+            </button>
+            <a href="#calculatorSection" class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/15 transition flex items-center gap-2">
+              <i class="fa-solid fa-calculator"></i> प्रीमियम चेक करें
+            </a>
+          </div>
+          <!-- Trust Metrics -->
+          <div class="grid grid-cols-3 gap-4 pt-4 border-t border-white/10 max-w-lg">
+            <div>
+              <div class="text-2xl font-extrabold text-emerald-400">5,000+</div>
+              <div class="text-xs text-slate-300">संतुष्ट ग्राहक (Utraula & Balrampur)</div>
+            </div>
+            <div>
+              <div class="text-2xl font-extrabold text-cyan-400">15+</div>
+              <div class="text-xs text-slate-300">प्रमुख बीमा कंपनियां</div>
+            </div>
+            <div>
+              <div class="text-2xl font-extrabold text-amber-400">99.2%</div>
+              <div class="text-xs text-slate-300">क्लेम सेटलमेंट सपोर्ट</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- QUICK ENQUIRY / RENEWAL CARD -->
+        <div id="quoteSection" class="lg:col-span-5">
+          <div class="bg-white text-slate-800 rounded-2xl p-6 shadow-2xl border border-slate-100">
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <h2 class="text-lg font-extrabold text-slate-900">तुरंत बीमा कोटेशन / रिन्यूअल</h2>
+                <p class="text-xs text-slate-500">अपना विवरण भरें, उतरौला ऑफिस से तुरंत कॉल आएगी</p>
+              </div>
+              <span class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold">
+                <i class="fa-solid fa-bolt"></i>
+              </span>
+            </div>
+            <form id="publicLeadForm" onsubmit="submitPublicLead(event)" class="space-y-3.5">
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">आपका शुभ नाम (Full Name) *</label>
+                <input type="text" id="leadName" required placeholder="जैसे: राजेश कुमार वर्मा" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" />
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1">मोबाइल नंबर (Mobile) *</label>
+                  <input type="tel" id="leadMobile" required pattern="[0-9]{10}" placeholder="10 अंकों का नंबर" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" />
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1">गाँव / कस्बा (Town/Village) *</label>
+                  <input type="text" id="leadTown" required placeholder="जैसे: Utraula / Balrampur" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" />
+                </div>
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">बीमा का प्रकार चुनें (Insurance Type) *</label>
+                <select id="leadType" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none bg-white">
+                  <option value="Two Wheeler (Bike/Scooty)">टू-व्हीलर बीमा (Bike / Scooty)</option>
+                  <option value="Four Wheeler (Car/SUV)">फोर-व्हीलर बीमा (Car / Bolero / SUV)</option>
+                  <option value="Commercial / Tractor / E-Rickshaw">ट्रैक्टर / ई-रिक्शा / कमर्शियल वाहन</option>
+                  <option value="Health Insurance (Family Floater)">स्वास्थ्य बीमा (Health / Star Health)</option>
+                  <option value="Life / LIC Term Plan">जीवन बीमा (LIC / Term Insurance)</option>
+                  <option value="Shop / Kisan Bima">दुकान / किसान सुरक्षा बीमा</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">गाड़ी नंबर या विवरण (Vehicle No / Details)</label>
+                <input type="text" id="leadDetail" placeholder="जैसे: UP-47-AB-1234 या फैमिली हेल्थ प्लान" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" />
+              </div>
+              <button type="submit" class="w-full py-3 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-bold text-sm shadow-md transition flex items-center justify-center gap-2">
+                <i class="fa-solid fa-paper-plane"></i> कोटेशन रिक्वेस्ट भेजें
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSURANCE SERVICES SECTION -->
+    <section id="servicesSection" class="max-w-7xl mx-auto px-4 py-14">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-xs font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-3 py-1 rounded-full">All-In-One Insurance Point</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">हमारी प्रमुख बीमा सेवाएं (Our Services)</h2>
+        <p class="text-sm text-slate-600 mt-1">उतरौला और बलरामपुर क्षेत्र के नागरिकों, किसानों और व्यापारियों के लिए संपूर्ण बीमा समाधान</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+          <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-car-side"></i></div>
+          <h3 class="text-lg font-bold text-slate-900">मोटर और वाहन बीमा (Motor Insurance)</h3>
+          <p class="text-sm text-slate-600 mt-2">बाइक, स्कूटी, कार, बोलेरो, ट्रैक्टर, ई-रिक्शा और ट्रक का थर्ड-पार्टी (TP) तथा फर्स्ट-पार्टी (Zero Dep) बीमा मात्र 5 मिनट में।</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+          <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-heart-pulse"></i></div>
+          <h3 class="text-lg font-bold text-slate-900">स्वास्थ्य बीमा (Health Insurance)</h3>
+          <p class="text-sm text-slate-600 mt-2">बलरामपुर, गोंडा, बहराइच और लखनऊ के टॉप अस्पतालों में कैशलेस इलाज की सुविधा। पूरे परिवार के लिए फैमिली फ्लोटर प्लान।</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+          <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-umbrella"></i></div>
+          <h3 class="text-lg font-bold text-slate-900">जीवन और टर्म बीमा (LIC & Term Plan)</h3>
+          <p class="text-sm text-slate-600 mt-2">परिवार के सुरक्षित भविष्य, बच्चों की उच्च शिक्षा और शादी के लिए गारंटीड रिटर्न और हाई-कवर टर्म इंश्योरेंस प्लान।</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+          <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-700 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-tractor"></i></div>
+          <h3 class="text-lg font-bold text-slate-900">किसान एवं ट्रैक्टर बीमा (Agri & Kisan)</h3>
+          <p class="text-sm text-slate-600 mt-2">कृषि ट्रैक्टर, ट्रॉली, पशु बीमा और किसान दुर्घटना बीमा की विशेष और किफायती योजनाएं।</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+          <div class="w-12 h-12 rounded-xl bg-rose-50 text-rose-700 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-store"></i></div>
+          <h3 class="text-lg font-bold text-slate-900">दुकान और व्यापार बीमा (Shop Insurance)</h3>
+          <p class="text-sm text-slate-600 mt-2">उतरौला मार्केट के दुकानदारों और गोदामों के लिए आग, चोरी और प्राकृतिक आपदा से सुरक्षा कवर।</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+          <div class="w-12 h-12 rounded-xl bg-cyan-50 text-cyan-700 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-file-shield"></i></div>
+          <h3 class="text-lg font-bold text-slate-900">तुरंत क्लेम और रिन्यूअल सहायता</h3>
+          <p class="text-sm text-slate-600 mt-2">पुरानी एक्सपायर पॉलिसी का इंस्पेक्शन कराकर रिन्यूअल और दुर्घटना या बीमारी के समय त्वरित क्लेम सेटलमेंट।</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSTANT PREMIUM CALCULATOR SECTION -->
+    <section id="calculatorSection" class="bg-slate-100 py-14 border-y border-slate-200">
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-md border border-slate-200 grid md:grid-cols-12 gap-8 items-center">
+          <div class="md:col-span-7 space-y-4">
+            <span class="text-xs font-bold uppercase text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full">Instant Estimator</span>
+            <h2 class="text-2xl font-extrabold text-slate-900">इंस्टेंट प्रीमियम कैलकुलेटर (Premium Calculator)</h2>
+            <p class="text-xs text-slate-500">अपनी गाड़ी या हेल्थ कवर की अनुमानित वार्षिक प्रीमियम तुरंत चेक करें:</p>
+
+            <div class="grid sm:grid-cols-2 gap-4 pt-2">
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">पॉलिसी कैटेगरी (Category)</label>
+                <select id="calcCategory" onchange="calculateInstantPremium()" class="w-full px-3 py-2.5 rounded-lg border border-slate-300 text-sm bg-white">
+                  <option value="bike">टू-व्हीलर (Bike / Scooty)</option>
+                  <option value="car">प्राइवेट कार (Car / SUV)</option>
+                  <option value="health">फैमिली हेल्थ (Health Insurance)</option>
+                  <option value="life">टर्म लाइफ (Term Life Plan)</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">बीमा राशि / IDV (₹ में)</label>
+                <input type="number" id="calcSumInsured" value="75000" min="15000" step="5000" oninput="calculateInstantPremium()" class="w-full px-3 py-2.5 rounded-lg border border-slate-300 text-sm" />
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">नो-क्लेम बोनस (NCB Discount)</label>
+                <select id="calcNcb" onchange="calculateInstantPremium()" class="w-full px-3 py-2.5 rounded-lg border border-slate-300 text-sm bg-white">
+                  <option value="0">0% (नई पॉलिसी / क्लेम लिया है)</option>
+                  <option value="20" selected>20% (1 साल बिना क्लेम)</option>
+                  <option value="25">25% (2 साल बिना क्लेम)</option>
+                  <option value="35">35% (3 साल बिना क्लेम)</option>
+                  <option value="50">50% (5+ साल बिना क्लेम)</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Zero Dep / Add-on कवर</label>
+                <select id="calcAddon" onchange="calculateInstantPremium()" class="w-full px-3 py-2.5 rounded-lg border border-slate-300 text-sm bg-white">
+                  <option value="standard">Standard Comprehensive</option>
+                  <option value="zerodep">Zero Depreciation (Bumper-to-Bumper)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:col-span-5 bg-gradient-to-br from-slate-900 to-blue-950 text-white rounded-2xl p-6 space-y-4">
+            <div class="text-xs text-emerald-300 font-semibold uppercase tracking-wider">अनुमानित वार्षिक प्रीमियम</div>
+            <div class="text-4xl font-extrabold text-white" id="calcResultYearly">₹ 2,140</div>
+            <div class="text-xs text-slate-300" id="calcResultMonthly">मासिक औसत: ₹ 178 / माह (18% GST सहित)</div>
+            <div class="border-t border-white/15 pt-3 text-xs space-y-1.5 text-slate-300">
+              <div class="flex justify-between"><span>बेस कवर + थर्ड पार्टी:</span><span id="calcBasePart" class="font-semibold text-white">₹ 1,814</span></div>
+              <div class="flex justify-between"><span>GST (18%):</span><span id="calcGstPart" class="font-semibold text-white">₹ 326</span></div>
+            </div>
+            <a href="#quoteSection" class="block w-full text-center py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold text-xs transition">
+              इस प्रीमियम पर पॉलिसी बुक करें
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT & UTRAULA OFFICE SECTION -->
+    <section id="contactSection" class="max-w-7xl mx-auto px-4 py-12">
+      <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm grid md:grid-cols-3 gap-6">
+        <div class="flex items-start gap-4">
+          <div class="w-11 h-11 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center text-lg shrink-0"><i class="fa-solid fa-map-location-dot"></i></div>
+          <div>
+            <h3 class="font-bold text-slate-900">हमारा कार्यालय (Office Address)</h3>
+            <p class="text-xs text-slate-600 mt-1 leading-relaxed">A To Z Insurance Point, नियर तहसील गेट / मुख्य बाज़ार, पोस्ट- उतरौला (Utraula), जिला- बलरामपुर, उत्तर प्रदेश - 271604</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="w-11 h-11 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center text-lg shrink-0"><i class="fa-solid fa-phone-volume"></i></div>
+          <div>
+            <h3 class="font-bold text-slate-900">हेल्पलाइन और WhatsApp</h3>
+            <p class="text-xs text-slate-600 mt-1">मोबाइल: +91 98765 43210<br/>ईमेल: support@atozinsuranceutraula.in</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="w-11 h-11 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center text-lg shrink-0"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+          <div>
+            <h3 class="font-bold text-slate-900">डिजिटल पोर्टल सुविधा</h3>
+            <p class="text-xs text-slate-600 mt-1">24×7 ऑनलाइन क्लाइंट पोर्टल से पॉलिसी डाउनलोड करें और क्लेम स्टेटस ट्रैक करें।</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =====================================================================
+       VIEW 2: CLIENT PORTAL (LOGIN WITH EMAIL/MOBILE + PASSWORD)
+       ===================================================================== -->
+  <section id="viewClientPortal" class="hidden flex-1 py-8 px-4">
+    <div class="max-w-6xl mx-auto">
+
+      <!-- CLIENT LOGIN BOX -->
+      <div id="clientLoginBox" class="max-w-md mx-auto bg-white rounded-2xl shadow-xl border border-slate-200 p-6 sm:p-8 mt-4">
+        <div class="text-center mb-6">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-600 text-white flex items-center justify-center text-2xl mx-auto mb-3 shadow-md">
+            <i class="fa-solid fa-user-check"></i>
+          </div>
+          <h2 class="text-xl font-extrabold text-slate-900">क्लाइंट पोर्टल लॉगिन (Client Login)</h2>
+          <p class="text-xs text-slate-500 mt-1">अपना पंजीकृत **मोबाइल नंबर** या **ईमेल आईडी** और पासवर्ड दर्ज करें</p>
+        </div>
+
+        <form onsubmit="handleClientLogin(event)" class="space-y-4">
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">मोबाइल नंबर या ईमेल (Mobile or Email) *</label>
+            <input type="text" id="clientLoginIdentifier" required placeholder="9876543210 या ramesh.utraula@gmail.com" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-600 focus:outline-none" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">पासवर्ड (Password) *</label>
+            <input type="password" id="clientLoginPassword" required placeholder="अपना पासवर्ड डालें" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-600 focus:outline-none" />
+          </div>
+          <button type="submit" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md transition">
+            <i class="fa-solid fa-right-to-bracket mr-1.5"></i> पोर्टल खोलें (Login)
+          </button>
+        </form>
+
+        <!-- Demo Quick Fill -->
+        <div class="mt-6 pt-4 border-t border-slate-100 text-xs text-slate-600 bg-slate-50 p-3.5 rounded-xl">
+          <div class="font-bold text-slate-800 mb-1.5"><i class="fa-solid fa-circle-info text-emerald-600 mr-1"></i>डेमो क्लाइंट अकाउंट (1-Click Fill):</div>
+          <div class="flex flex-wrap gap-2">
+            <button type="button" onclick="fillClientDemo('9876543210','123456')" class="px-2.5 py-1.5 rounded-lg bg-white border border-slate-300 hover:border-emerald-500 text-slate-700 font-medium transition">
+              रमेश वर्मा (Mobile: 9876543210)
+            </button>
+            <button type="button" onclick="fillClientDemo('mohd.arif@gmail.com','123456')" class="px-2.5 py-1.5 rounded-lg bg-white border border-slate-300 hover:border-emerald-500 text-slate-700 font-medium transition">
+              मो. आरिफ (Email Login)
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CLIENT DASHBOARD (VISIBLE AFTER LOGIN) -->
+      <div id="clientDashboardArea" class="hidden space-y-6">
+        <!-- Client Header Banner -->
+        <div class="bg-gradient-to-r from-emerald-800 to-teal-900 text-white rounded-2xl p-6 shadow-md flex flex-wrap justify-between items-center gap-4">
+          <div>
+            <span class="text-xs uppercase tracking-wider text-emerald-300 font-semibold">Welcome to A To Z Insurance Client Portal</span>
+            <h2 class="text-2xl font-extrabold mt-0.5" id="clientWelcomeName">नमस्ते, ग्राहक</h2>
+            <p class="text-xs text-emerald-100 mt-1" id="clientWelcomeMeta">Mobile: -- | Email: -- | Address: Utraula, Balrampur</p>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <button type="button" onclick="openClientClaimModal()" class="px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-xs shadow transition">
+              <i class="fa-solid fa-file-medical mr-1"></i> नया क्लेम दर्ज करें (File Claim)
+            </button>
+            <button type="button" onclick="logoutClient()" class="px-3.5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-semibold border border-white/20 transition">
+              <i class="fa-solid fa-power-off mr-1"></i> Logout
+            </button>
+          </div>
+        </div>
+
+        <!-- Client Summary Cards -->
+        <div class="grid sm:grid-cols-3 gap-4">
+          <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+            <div class="text-xs text-slate-500 font-semibold">आपकी कुल पॉलिसियां (My Policies)</div>
+            <div class="text-2xl font-extrabold text-slate-900 mt-1" id="clientStatTotalPolicies">0</div>
+          </div>
+          <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+            <div class="text-xs text-slate-500 font-semibold">कुल बीमा सुरक्षा कवर (Total Sum Insured)</div>
+            <div class="text-2xl font-extrabold text-emerald-600 mt-1" id="clientStatTotalCover">₹ 0</div>
+          </div>
+          <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+            <div class="text-xs text-slate-500 font-semibold">दर्ज किए गए क्लेम (My Claims)</div>
+            <div class="text-2xl font-extrabold text-blue-600 mt-1" id="clientStatTotalClaims">0</div>
+          </div>
+        </div>
+
+        <!-- Client Policies List -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6">
+          <h3 class="text-base font-extrabold text-slate-900 mb-4"><i class="fa-solid fa-shield-halved text-emerald-600 mr-2"></i>मेरी बीमा पॉलिसियां (Active & Past Policies)</h3>
+          <div id="clientPoliciesContainer" class="grid md:grid-cols-2 gap-4"></div>
+        </div>
+
+        <!-- Client Claims Tracker -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6">
+          <div class="flex justify-between items-center mb-4">
+            <h3 class="text-base font-extrabold text-slate-900"><i class="fa-solid fa-clipboard-check text-blue-600 mr-2"></i>मेरे क्लेम का स्टेटस (Claim Status Tracker)</h3>
+            <button type="button" onclick="openClientClaimModal()" class="text-xs font-bold text-blue-700 hover:underline">+ नया क्लेम जोड़ें</button>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs sm:text-sm">
+              <thead>
+                <tr class="bg-slate-100 text-slate-600 border-b border-slate-200">
+                  <th class="py-2.5 px-3">Claim ID</th>
+                  <th class="py-2.5 px-3">Policy No</th>
+                  <th class="py-2.5 px-3">Incident Date</th>
+                  <th class="py-2.5 px-3 text-right">Claim Amount</th>
+                  <th class="py-2.5 px-3">Reason / Details</th>
+                  <th class="py-2.5 px-3">Status</th>
+                  <th class="py-2.5 px-3">Admin Remarks</th>
+                </tr>
+              </thead>
+              <tbody id="clientClaimsTableBody" class="divide-y divide-slate-200"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       VIEW 3: ADMIN PORTAL (LOGIN WITH ID & PASSWORD + FULL CRM)
+       ===================================================================== -->
+  <section id="viewAdminPortal" class="hidden flex-1 py-8 px-4">
+    <div class="max-w-7xl mx-auto">
+
+      <!-- ADMIN LOGIN BOX -->
+      <div id="adminLoginBox" class="max-w-md mx-auto bg-white rounded-2xl shadow-xl border border-slate-200 p-6 sm:p-8 mt-4">
+        <div class="text-center mb-6">
+          <div class="w-14 h-14 rounded-2xl bg-blue-700 text-white flex items-center justify-center text-2xl mx-auto mb-3 shadow-md">
+            <i class="fa-solid fa-user-tie"></i>
+          </div>
+          <h2 class="text-xl font-extrabold text-slate-900">एडमिन पोर्टल लॉगिन (Admin CRM)</h2>
+          <p class="text-xs text-slate-500 mt-1">A To Z Insurance Point — Post- Utraula, Balrampur</p>
+        </div>
+
+        <form onsubmit="handleAdminLogin(event)" class="space-y-4">
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">एडमिन आईडी (Admin ID) *</label>
+            <input type="text" id="adminLoginId" required placeholder="admin" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">पासवर्ड (Password) *</label>
+            <input type="password" id="adminLoginPass" required placeholder="••••••••" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" />
+          </div>
+          <button type="submit" class="w-full py-3 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-bold text-sm shadow-md transition">
+            <i class="fa-solid fa-unlock-keyhole mr-1.5"></i> एडमिन डैशबोर्ड खोलें
+          </button>
+        </form>
+
+        <div class="mt-5 pt-4 border-t border-slate-100 text-xs text-slate-600 bg-blue-50/60 p-3.5 rounded-xl flex items-center justify-between">
+          <div>
+            <span class="font-bold text-slate-800">Default ID:</span> <code>admin</code> | <span class="font-bold text-slate-800">Pass:</span> <code>atoz@2026</code>
+          </div>
+          <button type="button" onclick="fillAdminDemo()" class="px-2.5 py-1 rounded bg-blue-700 text-white font-semibold hover:bg-blue-800 transition">Auto Fill</button>
+        </div>
+      </div>
+
+      <!-- ADMIN FULL CRM DASHBOARD -->
+      <div id="adminDashboardArea" class="hidden space-y-6">
+        <!-- Admin Top Bar -->
+        <div class="bg-slate-900 text-white rounded-2xl p-5 shadow-md flex flex-wrap justify-between items-center gap-4">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-blue-600 text-white">ADMIN CRM</span>
+              <span class="text-xs text-slate-400">Post- Utraula, District- Balrampur</span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-extrabold mt-1">A To Z Insurance Point — Client Management System</h2>
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            <button type="button" onclick="openClientModal()" class="px-4 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold text-xs shadow transition">
+              <i class="fa-solid fa-user-plus mr-1"></i> + नया क्लाइंट / पॉलिसी जोड़ें
+            </button>
+            <button type="button" onclick="openGoogleSheetModal()" class="px-3.5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs transition">
+              <i class="fa-solid fa-table mr-1"></i> Google Sheet Database Sync
+            </button>
+            <button type="button" onclick="exportClientsCsv()" class="px-3.5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs border border-slate-700 transition">
+              <i class="fa-solid fa-download mr-1"></i> Export CSV
+            </button>
+            <button type="button" onclick="logoutAdmin()" class="px-3 py-2.5 rounded-xl bg-rose-600/20 hover:bg-rose-600 text-rose-200 hover:text-white text-xs font-semibold border border-rose-500/30 transition">
+              <i class="fa-solid fa-power-off"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- KPI STAT CARDS -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+            <div class="flex justify-between items-center">
+              <span class="text-xs font-semibold text-slate-500">कुल क्लाइंट्स / पॉलिसियां</span>
+              <span class="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center"><i class="fa-solid fa-users"></i></span>
+            </div>
+            <div class="text-2xl font-extrabold text-slate-900 mt-2" id="adminKpiClients">0</div>
+            <div class="text-[11px] text-emerald-600 font-medium mt-0.5">Active CRM Database</div>
+          </div>
+          <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+            <div class="flex justify-between items-center">
+              <span class="text-xs font-semibold text-slate-500">कुल प्रीमियम कलेक्शन</span>
+              <span class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center"><i class="fa-solid fa-indian-rupee-sign"></i></span>
+            </div>
+            <div class="text-2xl font-extrabold text-emerald-700 mt-2" id="adminKpiPremium">₹ 0</div>
+            <div class="text-[11px] text-slate-500 mt-0.5">Annual Gross Premium</div>
+          </div>
+          <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+            <div class="flex justify-between items-center">
+              <span class="text-xs font-semibold text-slate-500">रिन्यूअल अलर्ट (30 दिन में)</span>
+              <span class="w-8 h-8 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center"><i class="fa-solid fa-bell"></i></span>
+            </div>
+            <div class="text-2xl font-extrabold text-amber-600 mt-2" id="adminKpiExpiring">0</div>
+            <div class="text-[11px] text-amber-700 font-medium mt-0.5">WhatsApp रिमाइंडर भेजें</div>
+          </div>
+          <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+            <div class="flex justify-between items-center">
+              <span class="text-xs font-semibold text-slate-500">पेंडिंग क्लेम / नई लीड्स</span>
+              <span class="w-8 h-8 rounded-lg bg-rose-50 text-rose-600 flex items-center justify-center"><i class="fa-solid fa-bolt"></i></span>
+            </div>
+            <div class="text-2xl font-extrabold text-rose-600 mt-2" id="adminKpiClaimsLeads">0 / 0</div>
+            <div class="text-[11px] text-slate-500 mt-0.5">Claims & Website Enquiries</div>
+          </div>
+        </div>
+
+        <!-- ADMIN SUB-NAVIGATION TABS -->
+        <div class="flex flex-wrap gap-2 border-b border-slate-200 pb-2">
+          <button type="button" onclick="switchAdminTab('clients')" id="adminTabBtnClients" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-blue-700 text-white shadow-sm transition">
+            <i class="fa-solid fa-address-book mr-1.5"></i>क्लाइंट और पॉलिसी मैनेजमेंट (Clients CRM)
+          </button>
+          <button type="button" onclick="switchAdminTab('claims')" id="adminTabBtnClaims" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 transition">
+            <i class="fa-solid fa-file-Waveform mr-1.5"></i>क्लेम मैनेजमेंट (Claims)
+          </button>
+          <button type="button" onclick="switchAdminTab('leads')" id="adminTabBtnLeads" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 transition">
+            <i class="fa-solid fa-bullhorn mr-1.5"></i>वेबसाइट कोटेशन लीड्स (Leads)
+          </button>
+          <button type="button" onclick="switchAdminTab('analytics')" id="adminTabBtnAnalytics" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 transition">
+            <i class="fa-solid fa-chart-pie mr-1.5"></i>बिज़नेस रिपोर्ट और चार्ट
+          </button>
+        </div>
+
+        <!-- TAB 1: CLIENTS & POLICIES CRM TABLE -->
+        <div id="adminSubTabClients" class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 space-y-4">
+          <div class="flex flex-wrap justify-between items-center gap-3">
+            <div class="flex flex-wrap items-center gap-2 flex-1 min-w-[240px]">
+              <div class="relative flex-1 max-w-md">
+                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-slate-400 text-xs"></i>
+                <input type="text" id="adminSearchInput" oninput="renderAdminAll()" placeholder="नाम, मोबाइल, पॉलिसी नं या गाड़ी नं (UP-47) से खोजें..." class="w-full pl-9 pr-3.5 py-2 rounded-xl border border-slate-300 text-xs sm:text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" />
+              </div>
+              <select id="adminFilterCategory" onchange="renderAdminAll()" class="px-3 py-2 rounded-xl border border-slate-300 text-xs sm:text-sm bg-white">
+                <option value="ALL">सभी कैटेगरी (All Categories)</option>
+                <option value="Motor Insurance">Motor Insurance (Bike/Car/Tractor)</option>
+                <option value="Health Insurance">Health Insurance</option>
+                <option value="Life / LIC">Life / LIC</option>
+                <option value="Shop / Kisan Bima">Shop / Kisan Bima</option>
+              </select>
+              <select id="adminFilterStatus" onchange="renderAdminAll()" class="px-3 py-2 rounded-xl border border-slate-300 text-xs sm:text-sm bg-white">
+                <option value="ALL">सभी स्टेटस (All Status)</option>
+                <option value="Active">Active (चालू)</option>
+                <option value="Expiring Soon">Expiring Soon (30 दिन में समाप्ति)</option>
+                <option value="Expired">Expired (समाप्त)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs sm:text-sm">
+              <thead>
+                <tr class="bg-slate-100 text-slate-600 border-b border-slate-200">
+                  <th class="py-3 px-3">क्लाइंट का नाम और पता</th>
+                  <th class="py-3 px-3">मोबाइल / लॉगिन पासवर्ड</th>
+                  <th class="py-3 px-3">पॉलिसी नं & कंपनी</th>
+                  <th class="py-3 px-3">कैटेगरी & वाहन/प्लान</th>
+                  <th class="py-3 px-3 text-right">प्रीमियम (₹)</th>
+                  <th class="py-3 px-3">समाप्ति तिथि (Expiry)</th>
+                  <th class="py-3 px-3">स्टेटस</th>
+                  <th class="py-3 px-3 text-center">एक्शन (Actions)</th>
+                </tr>
+              </thead>
+              <tbody id="adminClientsTableBody" class="divide-y divide-slate-200"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- TAB 2: CLAIMS MANAGEMENT -->
+        <div id="adminSubTabClaims" class="hidden bg-white rounded-2xl border border-slate-200 shadow-sm p-5">
+          <h3 class="text-base font-extrabold text-slate-900 mb-4">क्लाइंट्स द्वारा भेजे गए क्लेम (Claims Management)</h3>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs sm:text-sm">
+              <thead>
+                <tr class="bg-slate-100 text-slate-600 border-b border-slate-200">
+                  <th class="py-3 px-3">Claim ID</th>
+                  <th class="py-3 px-3">Client & Mobile</th>
+                  <th class="py-3 px-3">Policy No & Category</th>
+                  <th class="py-3 px-3">Incident Date</th>
+                  <th class="py-3 px-3 text-right">Amount Claimed</th>
+                  <th class="py-3 px-3">Reason</th>
+                  <th class="py-3 px-3">Status</th>
+                  <th class="py-3 px-3">Update Status</th>
+                </tr>
+              </thead>
+              <tbody id="adminClaimsTableBody" class="divide-y divide-slate-200"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- TAB 3: PUBLIC LEADS -->
+        <div id="adminSubTabLeads" class="hidden bg-white rounded-2xl border border-slate-200 shadow-sm p-5">
+          <h3 class="text-base font-extrabold text-slate-900 mb-4">पब्लिक वेबसाइट से आई इंक्वायरी (Quote & Renewal Leads)</h3>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs sm:text-sm">
+              <thead>
+                <tr class="bg-slate-100 text-slate-600 border-b border-slate-200">
+                  <th class="py-3 px-3">Lead ID</th>
+                  <th class="py-3 px-3">नाम (Customer Name)</th>
+                  <th class="py-3 px-3">मोबाइल</th>
+                  <th class="py-3 px-3">गाँव / कस्बा</th>
+                  <th class="py-3 px-3">बीमा प्रकार</th>
+                  <th class="py-3 px-3">वाहन / विवरण</th>
+                  <th class="py-3 px-3">स्टेटस</th>
+                  <th class="py-3 px-3">एक्शन</th>
+                </tr>
+              </thead>
+              <tbody id="adminLeadsTableBody" class="divide-y divide-slate-200"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- TAB 4: ANALYTICS CHART -->
+        <div id="adminSubTabAnalytics" class="hidden bg-white rounded-2xl border border-slate-200 shadow-sm p-6">
+          <h3 class="text-base font-extrabold text-slate-900 mb-4">कैटेगरी के अनुसार पॉलिसी और प्रीमियम विश्लेषण</h3>
+          <div class="relative h-72 w-full max-w-2xl mx-auto">
+            <canvas id="adminCategoryChart"></canvas>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       MODAL 1: ADD / EDIT CLIENT & POLICY (ADMIN)
+       ===================================================================== -->
+  <div id="modalClientForm" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-2xl max-w-2xl w-full p-6 shadow-2xl border border-slate-200 my-8">
+      <div class="flex justify-between items-center pb-3 border-b border-slate-200">
+        <h3 class="text-lg font-extrabold text-slate-900" id="modalClientTitle">नया क्लाइंट और पॉलिसी जोड़ें</h3>
+        <button type="button" onclick="closeClientModal()" class="text-slate-400 hover:text-slate-700 text-lg"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <form id="adminClientForm" onsubmit="saveClientFromModal(event)" class="grid sm:grid-cols-2 gap-3.5 pt-4 text-xs sm:text-sm">
+        <input type="hidden" id="editClientId" />
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">क्लाइंट का नाम (Full Name) *</label>
+          <input type="text" id="fClientName" required placeholder="जैसे: रमेश कुमार वर्मा" class="w-full px-3 py-2 rounded-lg border border-slate-300" />
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">मोबाइल नंबर (Client Login Mobile) *</label>
+          <input type="tel" id="fClientMobile" required placeholder="10 अंकों का मोबाइल नंबर" class="w-full px-3 py-2 rounded-lg border border-slate-300" />
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">ईमेल आईडी (Client Login Email) *</label>
+          <input type="email" id="fClientEmail" required placeholder="client@gmail.com" class="w-full px-3 py-2 rounded-lg border border-slate-300" />
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">क्लाइंट पोर्टल पासवर्ड (Login Password) *</label>
+          <input type="text" id="fClientPassword" required value="123456" class="w-full px-3 py-2 rounded-lg border border-slate-300" />
+        </div>
+        <div class="sm:col-span-2">
+          <label class="block font-semibold text-slate-700 mb-1">पता / ग्राम / पोस्ट (Address in Utraula / Balrampur) *</label>
+          <input type="text" id="fClientAddress" required placeholder="ग्राम/मोहल्ला, पोस्ट- उतरौला, जिला- बलरामपुर" class="w-full px-3 py-2 rounded-lg border border-slate-300" />
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">पॉलिसी नंबर (Policy Number) *</label>
+          <input type="text" id="fPolicyNo" required placeholder="POL-2026-8891" class="w-full px-3 py-2 rounded-lg border border-slate-300" />
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">पॉलिसी कैटेगरी (Category) *</label>
+          <select id="fCategory" class="w-full px-3 py-2 rounded-lg border border-slate-300 bg-white">
+            <option value="Motor Insurance">Motor Insurance (Bike/Car/Tractor)</option>
+            <option value="Health Insurance">Health Insurance</option>
+            <option value="Life / LIC">Life / LIC</option>
+            <option value="Shop / Kisan Bima">Shop / Kisan Bima</option>
+          </select>
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">बीमा कंपनी (Insurance Company) *</label>
+          <select id="fCompany" class="w-full px-3 py-2 rounded-lg border border-slate-300 bg-white">
+            <option value="LIC of India">LIC of India</option>
+            <option value="Star Health Insurance">Star Health Insurance</option>
+            <option value="HDFC ERGO General">HDFC ERGO General</option>
+            <option value="ICICI Lombard">ICICI Lombard</option>
+            <option value="Bajaj Allianz">Bajaj Allianz</option>
+            <option value="New India Assurance">New India Assurance</option>
+            <option value="SBI General Insurance">SBI General Insurance</option>
+          </select>
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">गाड़ी नंबर या प्लान (Vehicle No / Plan) *</label>
+          <input type="text" id="fVehicleOrPlan" required placeholder="UP-47-AB-4512 या Family Health Optima" class="w-full px-3 py-2 rounded-lg border border-slate-300" />
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">बीमा कवर राशि (Sum Insured ₹) *</label>
+          <input type="number" id="fSumInsured" required value="500000" class="w-full px-3 py-2 rounded-lg border border-slate-300" />
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">वार्षिक प्रीमियम (Annual Premium ₹) *</label>
+          <input type="number" id="fPremium" required value="12500" class="w-full px-3 py-2 rounded-lg border border-slate-300" />
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">प्रारंभ तिथि (Start Date) *</label>
+          <input type="date" id="fStartDate" required class="w-full px-3 py-2 rounded-lg border border-slate-300" />
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">समाप्ति तिथि (Expiry Date) *</label>
+          <input type="date" id="fExpiryDate" required class="w-full px-3 py-2 rounded-lg border border-slate-300" />
+        </div>
+
+        <div class="sm:col-span-2 flex justify-end gap-2 pt-3 border-t border-slate-200 mt-2">
+          <button type="button" onclick="closeClientModal()" class="px-4 py-2 rounded-xl border border-slate-300 text-slate-700 font-semibold">रद्द करें</button>
+          <button type="submit" class="px-5 py-2 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-bold shadow">सेव करें (Save to CRM)</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       MODAL 2: FILE NEW CLAIM (CLIENT PORTAL)
+       ===================================================================== -->
+  <div id="modalClientClaim" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-200">
+      <div class="flex justify-between items-center pb-3 border-b border-slate-200">
+        <h3 class="text-lg font-extrabold text-slate-900">ऑनलाइन क्लेम सूचना (File Claim)</h3>
+        <button type="button" onclick="closeClientClaimModal()" class="text-slate-400 hover:text-slate-700"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <form onsubmit="submitClientClaim(event)" class="space-y-3.5 pt-4 text-xs sm:text-sm">
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">पॉलिसी चुनें (Select Policy) *</label>
+          <select id="claimPolicySelect" required class="w-full px-3 py-2 rounded-lg border border-slate-300 bg-white"></select>
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">घटना / भर्ती की तारीख (Incident Date) *</label>
+          <input type="date" id="claimDate" required class="w-full px-3 py-2 rounded-lg border border-slate-300" />
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">अनुमानित क्लेम राशि (Claim Amount ₹) *</label>
+          <input type="number" id="claimAmount" required placeholder="जैसे: 25000" class="w-full px-3 py-2 rounded-lg border border-slate-300" />
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">कारण / अस्पताल या गैरेज का विवरण *</label>
+          <textarea id="claimReason" rows="3" required placeholder="दुर्घटना या बीमारी का संक्षिप्त विवरण लिखें..." class="w-full px-3 py-2 rounded-lg border border-slate-300"></textarea>
+        </div>
+        <div class="flex justify-end gap-2 pt-2">
+          <button type="button" onclick="closeClientClaimModal()" class="px-4 py-2 rounded-xl border border-slate-300 text-slate-700 font-semibold">रद्द करें</button>
+          <button type="submit" class="px-5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold">क्लेम सबमिट करें</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       MODAL 3: GOOGLE SHEETS DATABASE CONNECTION & SYNC
+       ===================================================================== -->
+  <div id="modalGoogleSheet" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-slate-200 space-y-4">
+      <div class="flex justify-between items-center pb-3 border-b border-slate-200">
+        <h3 class="text-lg font-extrabold text-slate-900"><i class="fa-solid fa-table text-emerald-600 mr-1.5"></i>Google Sheets Database सेटिंग्स</h3>
+        <button type="button" onclick="closeGoogleSheetModal()" class="text-slate-400 hover:text-slate-700"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <p class="text-xs text-slate-600 leading-relaxed">
+        अपनी Google Sheet के <strong>Apps Script Web App URL</strong> को नीचे पेस्ट करें। इसके बाद आपके सभी क्लाइंट्स, पॉलिसियां, क्लेम और लीड्स सीधे आपके Google Sheet में सेव और लोड होंगे।
+      </p>
+      <div>
+        <label class="block text-xs font-bold text-slate-700 mb-1">Google Apps Script Web App URL (`/exec` वाला लिंक)</label>
+        <input type="url" id="gsWebAppUrlInput" placeholder="https://script.google.com/macros/s/AKfycb.../exec" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" />
+      </div>
+      <div class="flex flex-wrap gap-2 pt-2">
+        <button type="button" onclick="saveGoogleSheetUrl()" class="px-4 py-2.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs">
+          <i class="fa-solid fa-floppy-disk mr-1"></i> URL सेव करें
+        </button>
+        <button type="button" onclick="syncToGoogleSheetNow()" class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs">
+          <i class="fa-solid fa-cloud-arrow-up mr-1"></i> अभी Google Sheet में डेटा भेजें (Push)
+        </button>
+        <button type="button" onclick="fetchFromGoogleSheetNow()" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-900 text-white font-bold text-xs">
+          <i class="fa-solid fa-cloud-arrow-down mr-1"></i> Google Sheet से डेटा लोड करें (Pull)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       MODAL 4: PRINTABLE DIGITAL POLICY CERTIFICATE
+       ===================================================================== -->
+  <div id="modalPolicyCert" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-xl w-full p-6 shadow-2xl border border-slate-200">
+      <div id="printableCertArea" class="border-2 border-slate-800 rounded-xl p-6 space-y-4">
+        <div class="flex justify-between items-start border-b-2 border-slate-800 pb-4">
+          <div>
+            <div class="text-xl font-extrabold text-slate-900">A TO Z INSURANCE POINT</div>
+            <div class="text-xs font-semibold text-emerald-700">Post- Utraula, District- Balrampur (U.P.) - 271604</div>
+            <div class="text-[11px] text-slate-500">Helpline: +91 98765 43210 | Verified Policy Summary Certificate</div>
+          </div>
+          <div class="text-right">
+            <span class="px-2.5 py-1 rounded bg-emerald-100 text-emerald-800 font-bold text-xs">VERIFIED POLICY</span>
+          </div>
+        </div>
+        <div id="certBodyContent" class="grid grid-cols-2 gap-3 text-xs sm:text-sm py-2"></div>
+        <div class="border-t border-slate-300 pt-3 flex justify-between items-center text-[11px] text-slate-500">
+          <span>Issued & Managed by: A To Z Insurance Point, Utraula</span>
+          <span class="font-bold text-slate-800">Authorised Signatory</span>
+        </div>
+      </div>
+      <div class="flex justify-end gap-2 mt-4 no-print">
+        <button type="button" onclick="closePolicyCertModal()" class="px-4 py-2 rounded-xl border border-slate-300 text-slate-700 font-semibold text-xs">बंद करें</button>
+        <button type="button" onclick="window.print()" class="px-5 py-2 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs">
+          <i class="fa-solid fa-print mr-1"></i> प्रिंट / PDF सेव करें
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-slate-400 text-xs py-6 px-4 border-t border-slate-800 mt-auto">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-4">
+      <div>
+        <strong class="text-white">A To Z Insurance Point</strong> — Main Market, Post- Utraula, District- Balrampur (Uttar Pradesh) 271604
+      </div>
+      <div>© 2026 A To Z Insurance Point. All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <!-- =====================================================================
+       APPLICATION JAVASCRIPT (STATE, AUTH, CRM, GOOGLE SHEETS SYNC)
+       ===================================================================== -->
+  <script>
+    // =========================================================================
+    // 1. GOOGLE SHEET WEB APP URL (Paste your Apps Script URL here or via Admin UI)
+    // =========================================================================
+    let GOOGLE_SHEET_API_URL = "https://script.google.com/macros/s/AKfycbwoBjSpLRPhjqcMybk59htjefPLUW8FyVnGJ08-BC2-tqi2uZRetT-AoT35uC_KUoTK2Q/exec"; 
+
+    // =========================================================================
+    // 2. INITIAL DEMO DATABASE (Utraula & Balrampur Realistic Records)
+    // =========================================================================
+    const DEFAULT_CLIENTS = [
+      {
+        id: 'CL-101',
+        name: 'रमेश कुमार वर्मा (Ramesh Kumar Verma)',
+        mobile: '9876543210',
+        email: 'ramesh.utraula@gmail.com',
+        password: '123456',
+        address: 'गांधी नगर, पोस्ट- उतरौला, जिला- बलरामपुर',
+        policyNo: 'POL-2026-4701',
+        category: 'Motor Insurance',
+        company: 'HDFC ERGO General',
+        vehicleOrPlan: 'UP-47-AB-4512 (Mahindra Bolero)',
+        sumInsured: 650000,
+        premium: 14800,
+        startDate: '2025-11-10',
+        expiryDate: '2026-11-09',
+        status: 'Expiring Soon'
+      },
+      {
+        id: 'CL-102',
+        name: 'रमेश कुमार वर्मा (Ramesh Kumar Verma)',
+        mobile: '9876543210',
+        email: 'ramesh.utraula@gmail.com',
+        password: '123456',
+        address: 'गांधी नगर, पोस्ट- उतरौला, जिला- बलरामपुर',
+        policyNo: 'SH-2026-9921',
+        category: 'Health Insurance',
+        company: 'Star Health Insurance',
+        vehicleOrPlan: 'Family Health Optima (4 Members)',
+        sumInsured: 500000,
+        premium: 16200,
+        startDate: '2026-03-01',
+        expiryDate: '2027-02-28',
+        status: 'Active'
+      },
+      {
+        id: 'CL-103',
+        name: 'मो. आरिफ खान (Mohd. Arif Khan)',
+        mobile: '9415012345',
+        email: 'mohd.arif@gmail.com',
+        password: '123456',
+        address: 'सुभाष नगर, उतरौला बाज़ार, बलरामपुर',
+        policyNo: 'ICICI-2026-3310',
+        category: 'Motor Insurance',
+        company: 'ICICI Lombard',
+        vehicleOrPlan: 'UP-47-M-8821 (Hero Splendor Plus)',
+        sumInsured: 62000,
+        premium: 1450,
+        startDate: '2026-01-15',
+        expiryDate: '2027-01-14',
+        status: 'Active'
+      },
+      {
+        id: 'CL-104',
+        name: 'अवधेश प्रताप सिंह (Awadhesh Pratap Singh)',
+        mobile: '9918055667',
+        email: 'awadhesh.balrampur@gmail.com',
+        password: '123456',
+        address: 'ग्राम- पचपेड़वा मार्ग, उतरौला, बलरामपुर',
+        policyNo: 'LIC-2025-7741',
+        category: 'Life / LIC',
+        company: 'LIC of India',
+        vehicleOrPlan: 'LIC Jeevan Labh (25 Years)',
+        sumInsured: 1000000,
+        premium: 28500,
+        startDate: '2026-02-10',
+        expiryDate: '2027-02-09',
+        status: 'Active'
+      }
+    ];
+
+    const DEFAULT_CLAIMS = [
+      {
+        claimId: 'CLM-501',
+        policyNo: 'POL-2026-4701',
+        clientName: 'रमेश कुमार वर्मा (Ramesh Kumar Verma)',
+        mobile: '9876543210',
+        category: 'Motor Insurance',
+        incidentDate: '2026-09-18',
+        amountClaimed: 18500,
+        reason: 'Front bumper & headlight damage near Balrampur highway',
+        status: 'Approved',
+        remarks: 'Survey completed at Utraula Workshop; payment approved.'
+      }
+    ];
+
+    const DEFAULT_LEADS = [
+      {
+        leadId: 'LD-901',
+        name: 'संतोष कुमार गुप्ता',
+        mobile: '9794011223',
+        villageOrTown: 'Utraula Main Market',
+        insuranceType: 'Shop / Kisan Bima',
+        vehicleOrDetail: 'Kirana & General Store Cover',
+        status: 'New'
+      }
+    ];
+
+    let appState = {
+      clients: [],
+      claims: [],
+      leads: [],
+      loggedInClient: null,
+      isAdminLoggedIn: false,
+      chartInstance: null
+    };
+
+    // =========================================================================
+    // 3. STORAGE HELPERS & INITIALIZATION
+    // =========================================================================
+    function loadState() {
+      try {
+        const savedClients = localStorage.getItem('atoz_clients');
+        const savedClaims  = localStorage.getItem('atoz_claims');
+        const savedLeads   = localStorage.getItem('atoz_leads');
+        const savedUrl     = localStorage.getItem('atoz_gs_url');
+
+        appState.clients = savedClients ? JSON.parse(savedClients) : [...DEFAULT_CLIENTS];
+        appState.claims  = savedClaims  ? JSON.parse(savedClaims)  : [...DEFAULT_CLAIMS];
+        appState.leads   = savedLeads   ? JSON.parse(savedLeads)   : [...DEFAULT_LEADS];
+        if (savedUrl) GOOGLE_SHEET_API_URL = savedUrl;
+      } catch (e) {
+        appState.clients = [...DEFAULT_CLIENTS];
+        appState.claims  = [...DEFAULT_CLAIMS];
+        appState.leads   = [...DEFAULT_LEADS];
+      }
+      recalculateExpiryStatuses();
+    }
+
+    function saveState() {
+      recalculateExpiryStatuses();
+      try {
+        localStorage.setItem('atoz_clients', JSON.stringify(appState.clients));
+        localStorage.setItem('atoz_claims',  JSON.stringify(appState.claims));
+        localStorage.setItem('atoz_leads',   JSON.stringify(appState.leads));
+      } catch (e) {}
+      if (GOOGLE_SHEET_API_URL) {
+        pushToGoogleSheetSilent();
+      }
+    }
+
+    function recalculateExpiryStatuses() {
+      const today = new Date();
+      appState.clients.forEach(c => {
+        if (!c.expiryDate) return;
+        const exp = new Date(c.expiryDate);
+        const diffDays = Math.ceil((exp - today) / (1000 * 60 * 60 * 24));
+        if (diffDays < 0) {
+          c.status = 'Expired';
+        } else if (diffDays <= 30) {
+          c.status = 'Expiring Soon';
+        } else {
+          c.status = 'Active';
+        }
+      });
+    }
+
+    function showToast(message, type = 'success') {
+      const container = document.getElementById('toastContainer');
+      const colors = {
+        success: 'bg-emerald-700 text-white border-emerald-500',
+        info: 'bg-blue-700 text-white border-blue-500',
+        error: 'bg-rose-700 text-white border-rose-500'
+      };
+      const el = document.createElement('div');
+      el.className = `pointer-events-auto px-4 py-3 rounded-xl shadow-lg border text-xs sm:text-sm font-semibold flex items-center justify-between gap-3 ${colors[type] || colors.success}`;
+      el.innerHTML = `<span>${message}</span>`;
+      container.appendChild(el);
+      setTimeout(() => { el.remove(); }, 3800);
+    }
+
+    // =========================================================================
+    // 4. NAVIGATION & PORTAL SWITCHING
+    // =========================================================================
+    function switchMainView(viewName) {
+      document.getElementById('viewPublic').classList.add('hidden');
+      document.getElementById('viewClientPortal').classList.add('hidden');
+      document.getElementById('viewAdminPortal').classList.add('hidden');
+
+      if (viewName === 'public') {
+        document.getElementById('viewPublic').classList.remove('hidden');
+      } else if (viewName === 'client') {
+        document.getElementById('viewClientPortal').classList.remove('hidden');
+      } else if (viewName === 'admin') {
+        document.getElementById('viewAdminPortal').classList.remove('hidden');
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function openPortal(portalType) {
+      switchMainView(portalType);
+      if (portalType === 'admin' && appState.isAdminLoggedIn) {
+        renderAdminAll();
+      }
+      if (portalType === 'client' && appState.loggedInClient) {
+        renderClientDashboard();
+      }
+    }
+
+    // =========================================================================
+    // 5. PUBLIC WEBSITE: PREMIUM CALCULATOR & LEAD SUBMISSION
+    // =========================================================================
+    function calculateInstantPremium() {
+      const cat = document.getElementById('calcCategory').value;
+      const sum = Number(document.getElementById('calcSumInsured').value) || 50000;
+      const ncb = Number(document.getElementById('calcNcb').value) || 0;
+      const addon = document.getElementById('calcAddon').value;
+
+      let rate = 0.022;
+      let fixedTp = 714;
+      if (cat === 'bike') { rate = 0.018; fixedTp = 714; }
+      if (cat === 'car')  { rate = 0.026; fixedTp = 2094; }
+      if (cat === 'health') { rate = 0.024; fixedTp = 500; }
+      if (cat === 'life')   { rate = 0.009; fixedTp = 300; }
+
+      let odPart = sum * rate * (1 - ncb / 100);
+      if (addon === 'zerodep') odPart *= 1.22;
+
+      const baseTotal = Math.round(odPart + fixedTp);
+      const gst = Math.round(baseTotal * 0.18);
+      const finalYearly = baseTotal + gst;
+      const monthly = Math.round(finalYearly / 12);
+
+      document.getElementById('calcResultYearly').textContent = '₹ ' + finalYearly.toLocaleString('en-IN');
+      document.getElementById('calcResultMonthly').textContent = `मासिक औसत: ₹ ${monthly.toLocaleString('en-IN')} / माह (18% GST सहित)`;
+      document.getElementById('calcBasePart').textContent = '₹ ' + baseTotal.toLocaleString('en-IN');
+      document.getElementById('calcGstPart').textContent = '₹ ' + gst.toLocaleString('en-IN');
+    }
+
+    function submitPublicLead(e) {
+      e.preventDefault();
+      const newLead = {
+        leadId: 'LD-' + Math.floor(1000 + Math.random() * 9000),
+        name: document.getElementById('leadName').value.trim(),
+        mobile: document.getElementById('leadMobile').value.trim(),
+        villageOrTown: document.getElementById('leadTown').value.trim(),
+        insuranceType: document.getElementById('leadType').value,
+        vehicleOrDetail: document.getElementById('leadDetail').value.trim() || 'N/A',
+        status: 'New'
+      };
+      appState.leads.unshift(newLead);
+      saveState();
+      document.getElementById('publicLeadForm').reset();
+      showToast('आपकी कोटेशन रिक्वेस्ट सफलतापूर्वक दर्ज हो गई है! उतरौला ऑफिस से जल्द कॉल किया जाएगा।', 'success');
+    }
+
+    // =========================================================================
+    // 6. CLIENT PORTAL AUTH & FEATURES (MOBILE OR EMAIL + PASSWORD)
+    // =========================================================================
+    function fillClientDemo(identifier, pass) {
+      document.getElementById('clientLoginIdentifier').value = identifier;
+      document.getElementById('clientLoginPassword').value = pass;
+    }
+
+    function handleClientLogin(e) {
+      e.preventDefault();
+      const ident = document.getElementById('clientLoginIdentifier').value.trim().toLowerCase();
+      const pass  = document.getElementById('clientLoginPassword').value.trim();
+
+      const matchedPolicies = appState.clients.filter(c => {
+        const mMatch = String(c.mobile).trim() === ident;
+        const eMatch = String(c.email).trim().toLowerCase() === ident;
+        return (mMatch || eMatch) && String(c.password).trim() === pass;
+      });
+
+      if (matchedPolicies.length === 0) {
+        showToast('गलत मोबाइल नंबर/ईमेल या पासवर्ड! कृपया पुनः प्रयास करें।', 'error');
+        return;
+      }
+
+      appState.loggedInClient = {
+        name: matchedPolicies[0].name,
+        mobile: String(matchedPolicies[0].mobile).trim(),
+        email: String(matchedPolicies[0].email).trim(),
+        address: matchedPolicies[0].address
+      };
+
+      document.getElementById('clientLoginBox').classList.add('hidden');
+      document.getElementById('clientDashboardArea').classList.remove('hidden');
+      renderClientDashboard();
+      showToast(`स्वागत है, ${appState.loggedInClient.name}!`, 'success');
+    }
+
+    function logoutClient() {
+      appState.loggedInClient = null;
+      document.getElementById('clientDashboardArea').classList.add('hidden');
+      document.getElementById('clientLoginBox').classList.remove('hidden');
+      showToast('आप क्लाइंट पोर्टल से लॉगआउट हो गए हैं।', 'info');
+    }
+
+    function renderClientDashboard() {
+      if (!appState.loggedInClient) return;
+      const user = appState.loggedInClient;
+      document.getElementById('clientWelcomeName').textContent = `नमस्ते, ${user.name}`;
+      document.getElementById('clientWelcomeMeta').textContent = `Mobile: +91 ${user.mobile} | Email: ${user.email} | Address: ${user.address}`;
+
+      const myPolicies = appState.clients.filter(c =>
+        String(c.mobile).trim() === user.mobile ||
+        String(c.email).trim().toLowerCase() === user.email.toLowerCase()
+      );
+
+      const myClaims = appState.claims.filter(cl => String(cl.mobile).trim() === user.mobile);
+
+      const totalCover = myPolicies.reduce((acc, p) => acc + (Number(p.sumInsured) || 0), 0);
+      document.getElementById('clientStatTotalPolicies').textContent = myPolicies.length;
+      document.getElementById('clientStatTotalCover').textContent = '₹ ' + totalCover.toLocaleString('en-IN');
+      document.getElementById('clientStatTotalClaims').textContent = myClaims.length;
+
+      // Render Policy Cards
+      const container = document.getElementById('clientPoliciesContainer');
+      container.innerHTML = myPolicies.map(p => {
+        const badgeClass = p.status === 'Active'
+          ? 'bg-emerald-100 text-emerald-800'
+          : p.status === 'Expiring Soon'
+          ? 'bg-amber-100 text-amber-800'
+          : 'bg-rose-100 text-rose-800';
+
+        return `
+          <div class="border border-slate-200 rounded-xl p-4 bg-slate-50/70 space-y-3">
+            <div class="flex justify-between items-start">
+              <div>
+                <span class="text-[11px] font-bold uppercase text-blue-700">${p.category}</span>
+                <h4 class="font-extrabold text-slate-900 text-sm sm:text-base">${p.vehicleOrPlan}</h4>
+                <p class="text-xs text-slate-500">Policy No: <strong>${p.policyNo}</strong> | ${p.company}</p>
+              </div>
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-bold ${badgeClass}">${p.status}</span>
+            </div>
+            <div class="grid grid-cols-3 gap-2 text-xs bg-white p-3 rounded-lg border border-slate-200/80">
+              <div><span class="text-slate-400 block">Sum Insured</span><strong class="text-slate-800">₹ ${Number(p.sumInsured).toLocaleString('en-IN')}</strong></div>
+              <div><span class="text-slate-400 block">Premium</span><strong class="text-emerald-700">₹ ${Number(p.premium).toLocaleString('en-IN')}</strong></div>
+              <div><span class="text-slate-400 block">Expiry Date</span><strong class="text-slate-800">${p.expiryDate}</strong></div>
+            </div>
+            <div class="flex flex-wrap gap-2 pt-1">
+              <button type="button" onclick="viewPolicyCertificate('${p.id}')" class="px-3 py-1.5 rounded-lg bg-blue-700 hover:bg-blue-800 text-white font-semibold text-xs transition">
+                <i class="fa-solid fa-print mr-1"></i> पॉलिसी सर्टिफिकेट प्रिंट करें
+              </button>
+              <a href="https://wa.me/919876543210?text=${encodeURIComponent('नमस्ते A To Z Insurance Point Utraula, मुझे अपनी पॉलिसी ' + p.policyNo + ' (' + p.vehicleOrPlan + ') का रिन्यूअल कराना है।')}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs transition">
+                <i class="fa-brands fa-whatsapp mr-1"></i> WhatsApp रिन्यूअल रिक्वेस्ट
+              </a>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      // Render Claims Table
+      const claimTbody = document.getElementById('clientClaimsTableBody');
+      if (myClaims.length === 0) {
+        claimTbody.innerHTML = `<tr><td colspan="7" class="py-4 text-center text-slate-400">अभी तक कोई क्लेम दर्ज नहीं किया गया है।</td></tr>`;
+      } else {
+        claimTbody.innerHTML = myClaims.map(c => `
+          <tr>
+            <td class="py-2.5 px-3 font-bold text-slate-800">${c.claimId}</td>
+            <td class="py-2.5 px-3">${c.policyNo}</td>
+            <td class="py-2.5 px-3">${c.incidentDate}</td>
+            <td class="py-2.5 px-3 text-right font-semibold">₹ ${Number(c.amountClaimed).toLocaleString('en-IN')}</td>
+            <td class="py-2.5 px-3">${c.reason}</td>
+            <td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded-full text-xs font-bold bg-blue-100 text-blue-800">${c.status}</span></td>
+            <td class="py-2.5 px-3 text-slate-600">${c.remarks || 'प्रक्रिया में (Under Review)'}</td>
+          </tr>
+        `).join('');
+      }
+    }
+
+    function openClientClaimModal() {
+      if (!appState.loggedInClient) return;
+      const user = appState.loggedInClient;
+      const myPolicies = appState.clients.filter(c => String(c.mobile).trim() === user.mobile);
+      const select = document.getElementById('claimPolicySelect');
+      select.innerHTML = myPolicies.map(p => `<option value="${p.policyNo}|${p.category}">${p.policyNo} — ${p.vehicleOrPlan}</option>`).join('');
+      document.getElementById('claimDate').valueAsDate = new Date();
+      document.getElementById('modalClientClaim').classList.remove('hidden');
+    }
+
+    function closeClientClaimModal() {
+      document.getElementById('modalClientClaim').classList.add('hidden');
+    }
+
+    function submitClientClaim(e) {
+      e.preventDefault();
+      const [policyNo, category] = document.getElementById('claimPolicySelect').value.split('|');
+      const newClaim = {
+        claimId: 'CLM-' + Math.floor(100 + Math.random() * 900),
+        policyNo: policyNo,
+        clientName: appState.loggedInClient.name,
+        mobile: appState.loggedInClient.mobile,
+        category: category || 'Motor Insurance',
+        incidentDate: document.getElementById('claimDate').value,
+        amountClaimed: Number(document.getElementById('claimAmount').value) || 0,
+        reason: document.getElementById('claimReason').value.trim(),
+        status: 'Pending Review',
+        remarks: 'उतरौला ऑफिस द्वारा जांच की जा रही है'
+      };
+      appState.claims.unshift(newClaim);
+      saveState();
+      closeClientClaimModal();
+      renderClientDashboard();
+      showToast('आपका क्लेम सफलतापूर्वक दर्ज हो गया है!', 'success');
+    }
+
+    // =========================================================================
+    // 7. ADMIN PORTAL AUTH & FULL CRM MANAGEMENT
+    // =========================================================================
+    function fillAdminDemo() {
+      document.getElementById('adminLoginId').value = 'admin';
+      document.getElementById('adminLoginPass').value = 'atoz@2026';
+    }
+
+    function handleAdminLogin(e) {
+      e.preventDefault();
+      const id = document.getElementById('adminLoginId').value.trim();
+      const pass = document.getElementById('adminLoginPass').value.trim();
+
+      if (id === 'admin' && pass === 'atoz@2026') {
+        appState.isAdminLoggedIn = true;
+        document.getElementById('adminLoginBox').classList.add('hidden');
+        document.getElementById('adminDashboardArea').classList.remove('hidden');
+        renderAdminAll();
+        showToast('एडमिन पोर्टल में आपका स्वागत है!', 'success');
+      } else {
+        showToast('गलत एडमिन आईडी या पासवर्ड!', 'error');
+      }
+    }
+
+    function logoutAdmin() {
+      appState.isAdminLoggedIn = false;
+      document.getElementById('adminDashboardArea').classList.add('hidden');
+      document.getElementById('adminLoginBox').classList.remove('hidden');
+      showToast('एडमिन पोर्टल से लॉगआउट हो गया।', 'info');
+    }
+
+    function switchAdminTab(tabName) {
+      ['clients', 'claims', 'leads', 'analytics'].forEach(t => {
+        const cap = t.charAt(0).toUpperCase() + t.slice(1);
+        document.getElementById('adminSubTab' + cap).classList.add('hidden');
+        const btn = document.getElementById('adminTabBtn' + cap);
+        btn.className = 'px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 transition';
+      });
+      const activeCap = tabName.charAt(0).toUpperCase() + tabName.slice(1);
+      document.getElementById('adminSubTab' + activeCap).classList.remove('hidden');
+      document.getElementById('adminTabBtn' + activeCap).className = 'px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-blue-700 text-white shadow-sm transition';
+
+      if (tabName === 'analytics') {
+        renderAdminChart();
+      }
+    }
+
+    function renderAdminAll() {
+      recalculateExpiryStatuses();
+
+      // KPIs
+      const totalClients = appState.clients.length;
+      const totalPremium = appState.clients.reduce((s, c) => s + (Number(c.premium) || 0), 0);
+      const expiringSoon = appState.clients.filter(c => c.status === 'Expiring Soon' || c.status === 'Expired').length;
+      const pendingClaims = appState.claims.filter(c => c.status === 'Pending Review').length;
+
+      document.getElementById('adminKpiClients').textContent = totalClients;
+      document.getElementById('adminKpiPremium').textContent = '₹ ' + totalPremium.toLocaleString('en-IN');
+      document.getElementById('adminKpiExpiring').textContent = expiringSoon;
+      document.getElementById('adminKpiClaimsLeads').textContent = `${pendingClaims} / ${appState.leads.length}`;
+
+      // Filter Clients
+      const q = (document.getElementById('adminSearchInput').value || '').toLowerCase().trim();
+      const catFilter = document.getElementById('adminFilterCategory').value;
+      const statusFilter = document.getElementById('adminFilterStatus').value;
+
+      const filtered = appState.clients.filter(c => {
+        const matchesQ = !q ||
+          String(c.name).toLowerCase().includes(q) ||
+          String(c.mobile).toLowerCase().includes(q) ||
+          String(c.policyNo).toLowerCase().includes(q) ||
+          String(c.vehicleOrPlan).toLowerCase().includes(q);
+        const matchesCat = (catFilter === 'ALL') || (c.category === catFilter);
+        const matchesSt  = (statusFilter === 'ALL') || (c.status === statusFilter);
+        return matchesQ && matchesCat && matchesSt;
+      });
+
+      const tbody = document.getElementById('adminClientsTableBody');
+      tbody.innerHTML = filtered.map(c => {
+        const stClass = c.status === 'Active'
+          ? 'bg-emerald-100 text-emerald-800'
+          : c.status === 'Expiring Soon'
+          ? 'bg-amber-100 text-amber-800'
+          : 'bg-rose-100 text-rose-800';
+        const waMsg = encodeURIComponent(`नमस्ते ${c.name} जी, A To Z Insurance Point (Utraula, Balrampur) की ओर से सूचना: आपकी बीमा पॉलिसी (${c.policyNo} - ${c.vehicleOrPlan}) की समाप्ति तिथि ${c.expiryDate} है। कृपया समय पर रिन्यूअल कराएं। संपर्क: +91 9876543210`);
+
+        return `
+          <tr class="hover:bg-slate-50">
+            <td class="py-3 px-3">
+              <div class="font-bold text-slate-900">${c.name}</div>
+              <div class="text-xs text-slate-500">${c.address}</div>
+            </td>
+            <td class="py-3 px-3">
+              <div class="font-semibold text-slate-800"><i class="fa-solid fa-phone text-emerald-600 mr-1"></i>${c.mobile}</div>
+              <div class="text-[11px] text-slate-500">${c.email} | Pass: <code>${c.password}</code></div>
+            </td>
+            <td class="py-3 px-3">
+              <div class="font-bold text-blue-700">${c.policyNo}</div>
+              <div class="text-xs text-slate-500">${c.company}</div>
+            </td>
+            <td class="py-3 px-3">
+              <div class="font-semibold text-slate-800">${c.category}</div>
+              <div class="text-xs text-slate-500">${c.vehicleOrPlan}</div>
+            </td>
+            <td class="py-3 px-3 text-right font-bold text-slate-900">₹ ${Number(c.premium).toLocaleString('en-IN')}</td>
+            <td class="py-3 px-3 font-medium">${c.expiryDate}</td>
+            <td class="py-3 px-3"><span class="px-2.5 py-0.5 rounded-full text-xs font-bold ${stClass}">${c.status}</span></td>
+            <td class="py-3 px-3 text-center">
+              <div class="flex items-center justify-center gap-1.5">
+                <button type="button" onclick="viewPolicyCertificate('${c.id}')" title="Print Certificate" class="p-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700"><i class="fa-solid fa-print"></i></button>
+                <a href="https://wa.me/91${c.mobile}?text=${waMsg}" target="_blank" rel="noopener noreferrer" title="WhatsApp Reminder" class="p-1.5 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-700"><i class="fa-brands fa-whatsapp"></i></a>
+                <button type="button" onclick="openClientModal('${c.id}')" title="Edit" class="p-1.5 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-700"><i class="fa-solid fa-pen"></i></button>
+                <button type="button" onclick="deleteClientRecord('${c.id}')" title="Delete" class="p-1.5 rounded-lg bg-rose-50 hover:bg-rose-100 text-rose-700"><i class="fa-solid fa-trash"></i></button>
+              </div>
+            </td>
+          </tr>
+        `;
+      }).join('');
+
+      // Render Admin Claims
+      const claimsTbody = document.getElementById('adminClaimsTableBody');
+      claimsTbody.innerHTML = appState.claims.map(cl => `
+        <tr>
+          <td class="py-3 px-3 font-bold">${cl.claimId}</td>
+          <td class="py-3 px-3"><div class="font-bold">${cl.clientName}</div><div class="text-xs text-slate-500">${cl.mobile}</div></td>
+          <td class="py-3 px-3"><div>${cl.policyNo}</div><div class="text-xs text-slate-500">${cl.category}</div></td>
+          <td class="py-3 px-3">${cl.incidentDate}</td>
+          <td class="py-3 px-3 text-right font-bold">₹ ${Number(cl.amountClaimed).toLocaleString('en-IN')}</td>
+          <td class="py-3 px-3">${cl.reason}</td>
+          <td class="py-3 px-3"><span class="px-2 py-0.5 rounded-full text-xs font-bold bg-blue-100 text-blue-800">${cl.status}</span></td>
+          <td class="py-3 px-3">
+            <select onchange="updateClaimStatus('${cl.claimId}', this.value)" class="px-2 py-1 rounded border border-slate-300 text-xs bg-white">
+              <option value="Pending Review" ${cl.status === 'Pending Review' ? 'selected' : ''}>Pending Review</option>
+              <option value="Approved" ${cl.status === 'Approved' ? 'selected' : ''}>Approved</option>
+              <option value="Settled" ${cl.status === 'Settled' ? 'selected' : ''}>Settled</option>
+              <option value="Rejected" ${cl.status === 'Rejected' ? 'selected' : ''}>Rejected</option>
+            </select>
+          </td>
+        </tr>
+      `).join('');
+
+      // Render Admin Leads
+      const leadsTbody = document.getElementById('adminLeadsTableBody');
+      leadsTbody.innerHTML = appState.leads.map(ld => `
+        <tr>
+          <td class="py-3 px-3 font-bold">${ld.leadId}</td>
+          <td class="py-3 px-3 font-bold">${ld.name}</td>
+          <td class="py-3 px-3">${ld.mobile}</td>
+          <td class="py-3 px-3">${ld.villageOrTown}</td>
+          <td class="py-3 px-3">${ld.insuranceType}</td>
+          <td class="py-3 px-3">${ld.vehicleOrDetail}</td>
+          <td class="py-3 px-3"><span class="px-2 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-800">${ld.status}</span></td>
+          <td class="py-3 px-3">
+            <button type="button" onclick="markLeadConverted('${ld.leadId}')" class="px-2.5 py-1 rounded bg-emerald-600 text-white text-xs font-semibold">Mark Contacted</button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function openClientModal(editId = null) {
+      document.getElementById('adminClientForm').reset();
+      document.getElementById('editClientId').value = '';
+      if (editId) {
+        const c = appState.clients.find(x => x.id === editId);
+        if (c) {
+          document.getElementById('modalClientTitle').textContent = 'क्लाइंट / पॉलिसी विवरण अपडेट करें';
+          document.getElementById('editClientId').value = c.id;
+          document.getElementById('fClientName').value = c.name;
+          document.getElementById('fClientMobile').value = c.mobile;
+          document.getElementById('fClientEmail').value = c.email;
+          document.getElementById('fClientPassword').value = c.password;
+          document.getElementById('fClientAddress').value = c.address;
+          document.getElementById('fPolicyNo').value = c.policyNo;
+          document.getElementById('fCategory').value = c.category;
+          document.getElementById('fCompany').value = c.company;
+          document.getElementById('fVehicleOrPlan').value = c.vehicleOrPlan;
+          document.getElementById('fSumInsured').value = c.sumInsured;
+          document.getElementById('fPremium').value = c.premium;
+          document.getElementById('fStartDate').value = c.startDate;
+          document.getElementById('fExpiryDate').value = c.expiryDate;
+        }
+      } else {
+        document.getElementById('modalClientTitle').textContent = 'नया क्लाइंट और पॉलिसी जोड़ें';
+        const today = new Date();
+        const nextYear = new Date();
+        nextYear.setFullYear(today.getFullYear() + 1);
+        document.getElementById('fStartDate').value = today.toISOString().split('T')[0];
+        document.getElementById('fExpiryDate').value = nextYear.toISOString().split('T')[0];
+      }
+      document.getElementById('modalClientForm').classList.remove('hidden');
+    }
+
+    function closeClientModal() {
+      document.getElementById('modalClientForm').classList.add('hidden');
+    }
+
+    function saveClientFromModal(e) {
+      e.preventDefault();
+      const editId = document.getElementById('editClientId').value;
+      const record = {
+        id: editId || ('CL-' + Math.floor(1000 + Math.random() * 9000)),
+        name: document.getElementById('fClientName').value.trim(),
+        mobile: document.getElementById('fClientMobile').value.trim(),
+        email: document.getElementById('fClientEmail').value.trim(),
+        password: document.getElementById('fClientPassword').value.trim(),
+        address: document.getElementById('fClientAddress').value.trim(),
+        policyNo: document.getElementById('fPolicyNo').value.trim(),
+        category: document.getElementById('fCategory').value,
+        company: document.getElementById('fCompany').value,
+        vehicleOrPlan: document.getElementById('fVehicleOrPlan').value.trim(),
+        sumInsured: Number(document.getElementById('fSumInsured').value) || 0,
+        premium: Number(document.getElementById('fPremium').value) || 0,
+        startDate: document.getElementById('fStartDate').value,
+        expiryDate: document.getElementById('fExpiryDate').value,
+        status: 'Active',
+        updatedAt: new Date().toISOString()
+      };
+
+      if (editId) {
+        const idx = appState.clients.findIndex(x => x.id === editId);
+        if (idx > -1) appState.clients[idx] = record;
+      } else {
+        appState.clients.unshift(record);
+      }
+
+      saveState();
+      closeClientModal();
+      renderAdminAll();
+      showToast('क्लाइंट और पॉलिसी सफलतापूर्वक सेव हो गई!', 'success');
+    }
+
+    function deleteClientRecord(id) {
+      appState.clients = appState.clients.filter(c => c.id !== id);
+      saveState();
+      renderAdminAll();
+      showToast('पॉलिसी रिकॉर्ड हटा दिया गया।', 'info');
+    }
+
+    function updateClaimStatus(claimId, newStatus) {
+      const cl = appState.claims.find(x => x.claimId === claimId);
+      if (cl) {
+        cl.status = newStatus;
+        cl.remarks = `Updated by Admin to ${newStatus}`;
+        saveState();
+        renderAdminAll();
+        showToast(`Claim ${claimId} का स्टेटस ${newStatus} कर दिया गया।`, 'success');
+      }
+    }
+
+    function markLeadConverted(leadId) {
+      const ld = appState.leads.find(x => x.leadId === leadId);
+      if (ld) {
+        ld.status = 'Contacted';
+        saveState();
+        renderAdminAll();
+        showToast('लीड को Contacted मार्क कर दिया गया।', 'success');
+      }
+    }
+
+    // =========================================================================
+    // 8. DIGITAL POLICY CERTIFICATE MODAL & CSV EXPORT
+    // =========================================================================
+    function viewPolicyCertificate(clientId) {
+      const c = appState.clients.find(x => x.id === clientId);
+      if (!c) return;
+      document.getElementById('certBodyContent').innerHTML = `
+        <div><span class="text-slate-400 block">Policy Holder Name:</span><strong class="text-slate-900">${c.name}</strong></div>
+        <div><span class="text-slate-400 block">Policy Number:</span><strong class="text-blue-700">${c.policyNo}</strong></div>
+        <div><span class="text-slate-400 block">Registered Mobile & Email:</span><strong>+91 ${c.mobile} | ${c.email}</strong></div>
+        <div><span class="text-slate-400 block">Address:</span><strong>${c.address}</strong></div>
+        <div><span class="text-slate-400 block">Insurance Company:</span><strong>${c.company}</strong></div>
+        <div><span class="text-slate-400 block">Category & Vehicle/Plan:</span><strong>${c.category} — ${c.vehicleOrPlan}</strong></div>
+        <div><span class="text-slate-400 block">Sum Insured (Cover):</span><strong>₹ ${Number(c.sumInsured).toLocaleString('en-IN')}</strong></div>
+        <div><span class="text-slate-400 block">Annual Premium Paid:</span><strong class="text-emerald-700">₹ ${Number(c.premium).toLocaleString('en-IN')}</strong></div>
+        <div><span class="text-slate-400 block">Policy Start Date:</span><strong>${c.startDate}</strong></div>
+        <div><span class="text-slate-400 block">Policy Expiry Date:</span><strong class="text-rose-700">${c.expiryDate} (${c.status})</strong></div>
+      `;
+      document.getElementById('modalPolicyCert').classList.remove('hidden');
+    }
+
+    function closePolicyCertModal() {
+      document.getElementById('modalPolicyCert').classList.add('hidden');
+    }
+
+    function exportClientsCsv() {
+      const headers = ['ID','Name','Mobile','Email','Address','PolicyNo','Category','Company','VehicleOrPlan','SumInsured','Premium','StartDate','ExpiryDate','Status'];
+      const rows = appState.clients.map(c => [
+        c.id, `"${c.name}"`, c.mobile, c.email, `"${c.address}"`, c.policyNo,
+        c.category, `"${c.company}"`, `"${c.vehicleOrPlan}"`, c.sumInsured, c.premium, c.startDate, c.expiryDate, c.status
+      ].join(','));
+      const csv = [headers.join(','), ...rows].join('\n');
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'A_To_Z_Insurance_Utraula_Clients.csv';
+      a.click();
+      showToast('CSV फाइल डाउनलोड हो गई!', 'success');
+    }
+
+    function renderAdminChart() {
+      const ctx = document.getElementById('adminCategoryChart');
+      if (!ctx) return;
+      const cats = ['Motor Insurance', 'Health Insurance', 'Life / LIC', 'Shop / Kisan Bima'];
+      const counts = cats.map(cat => appState.clients.filter(c => c.category === cat).length);
+
+      if (appState.chartInstance) {
+        appState.chartInstance.destroy();
+      }
+      appState.chartInstance = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: cats,
+          datasets: [{
+            label: 'पॉलिसियों की संख्या (Number of Policies)',
+            data: counts,
+            backgroundColor: ['#1d4ed8', '#059669', '#d97706', '#7c3aed'],
+            borderRadius: 8
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false
+        }
+      });
+    }
+
+    // =========================================================================
+    // 9. GOOGLE SHEETS CLOUD SYNC FUNCTIONS
+    // =========================================================================
+    function openGoogleSheetModal() {
+      document.getElementById('gsWebAppUrlInput').value = GOOGLE_SHEET_API_URL || '';
+      document.getElementById('modalGoogleSheet').classList.remove('hidden');
+    }
+
+    function closeGoogleSheetModal() {
+      document.getElementById('modalGoogleSheet').classList.add('hidden');
+    }
+
+    function saveGoogleSheetUrl() {
+      const url = document.getElementById('gsWebAppUrlInput').value.trim();
+      GOOGLE_SHEET_API_URL = url;
+      try { localStorage.setItem('atoz_gs_url', url); } catch (e) {}
+      showToast('Google Sheet Web App URL सेव हो गया!', 'success');
+    }
+
+    async function pushToGoogleSheetSilent() {
+      if (!GOOGLE_SHEET_API_URL) return;
+      try {
+        await fetch(GOOGLE_SHEET_API_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify({
+            action: 'SYNC_ALL',
+            clients: appState.clients,
+            claims: appState.claims,
+            leads: appState.leads
+          })
+        });
+      } catch (e) {}
+    }
+
+    async function syncToGoogleSheetNow() {
+      saveGoogleSheetUrl();
+      if (!GOOGLE_SHEET_API_URL) {
+        showToast('कृपया पहले Google Apps Script Web App URL पेस्ट करें!', 'error');
+        return;
+      }
+      showToast('Google Sheet में डेटा सिंक किया जा रहा है...', 'info');
+      await pushToGoogleSheetSilent();
+      showToast('आपका पूरा डेटा Google Sheet में भेज दिया गया है!', 'success');
+    }
+
+    async function fetchFromGoogleSheetNow() {
+      saveGoogleSheetUrl();
+      if (!GOOGLE_SHEET_API_URL) {
+        showToast('कृपया पहले Google Apps Script Web App URL पेस्ट करें!', 'error');
+        return;
+      }
+      try {
+        showToast('Google Sheet से डेटा लोड हो रहा है...', 'info');
+        const res = await fetch(GOOGLE_SHEET_API_URL);
+        const data = await res.json();
+        if (data && Array.isArray(data.clients) && data.clients.length > 0) {
+          appState.clients = data.clients;
+          appState.claims  = data.claims || [];
+          appState.leads   = data.leads || [];
+          saveState();
+          renderAdminAll();
+          showToast('Google Sheet से डेटा सफलतापूर्वक लोड हो गया!', 'success');
+        } else {
+          showToast('Google Sheet अभी खाली है, पहले Push बटन दबाकर डेटा भेजें।', 'info');
+        }
+      } catch (err) {
+        showToast('Google Sheet से कनेक्ट करने में त्रुटि। सुनिश्चित करें कि Who has access: Anyone है।', 'error');
+      }
+    }
+
+    // Initialize on load
+    window.addEventListener('DOMContentLoaded', () => {
+      loadState();
+      calculateInstantPremium();
+    });
+  </script>
+</body>
+</html>
